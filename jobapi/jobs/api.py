@@ -27,7 +27,7 @@ class JobViewSet(viewsets.ModelViewSet):
 def article_data(request):
     if request.method == "POST":
         data = json.loads(request.body.decode('utf-8'))
-        endpoint = 'http://api.adzuna.com/v1/api/jobs/us/search/1?app_id={app_id}&app_key={app_key}&what={search}'.format(search=data["search"], app_key=settings.ADZUNA_API_KEY, app_id=settings.ADZUNA_APP_ID)
+        endpoint = 'http://api.adzuna.com/v1/api/jobs/us/search/1?app_id={app_id}&app_key={app_key}&what={title}&where={state}'.format(title=data["title"], state=data["state"], app_key=settings.ADZUNA_API_KEY, app_id=settings.ADZUNA_APP_ID)
         response = requests.get(endpoint)
         return JsonResponse(data=response.json(), status=200)
 
