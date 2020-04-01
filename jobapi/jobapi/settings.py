@@ -125,8 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-APP_ID1 = config('app_id', default='')
-APP_KEY1 =config('app_key', default='')
+ADZUNA_APP_ID = config('ADZUNA_APP_ID', default='')
+ADZUNA_API_KEY =config('ADZUNA_API_KEY', default='')
+NEWS_API_KEY = config('NEWS_API_KEY', default='')
 
 CORS_ORIGIN_ALLOW_ALL = True
 

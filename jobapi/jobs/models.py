@@ -14,3 +14,4 @@ class Article(models.Model):
     description = models.TextField()
     image = models.CharField(max_length=255)
     url = models.CharField(max_length=255)
+
